@@ -49,9 +49,9 @@ jobs:
         # the runner needs to connect to our EC2 server so its needs to know the host, username, and key file so it can connect. It is using the values we defined as secrets in the previous step
         env: 
           SSH_PRIVATE_KEY: ${{secrets.EC2_SSH_KEY}}
-          REMOTE_HOST: ${{secrets.HOST_DNS}}
-          REMOTE_USER: ${{secrets.USERNAME}}
-          TARGET: ${{secrets.TARGET_DIR}}
+          REMOTE_HOST: ${{secrets.REMOTE_HOST}}
+          REMOTE_USER: ${{secrets.REMOTE_USER}}
+          TARGET: ${{secrets.TARGET}}
 
   # this job will run composer install on our EC2 instance
   composer:
